@@ -6,6 +6,13 @@ const themeToggle = document.querySelector(".theme-toggle");
 if (localTheme) {
   document.body.classList.remove("light-theme", "dark-theme");
   document.body.classList.add(localTheme);
+} else {
+  // special needs requeries stupid code
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark-theme");
+  } else {
+    document.body.classList.add("light-theme");
+  }
 }
 
 themeToggle.addEventListener("click", () => {
