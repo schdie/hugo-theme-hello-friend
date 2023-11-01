@@ -7,7 +7,7 @@ if (localTheme) {
   document.body.classList.remove("light-theme", "dark-theme");
   document.body.classList.add(localTheme);
 } else {
-  // special needs requeries stupid code
+  // special needs requires stupid code
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     document.body.classList.add("dark-theme");
   } else {
