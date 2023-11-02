@@ -262,6 +262,9 @@ hr {
   border: 1px solid var(--border-color);
   width: 100%;
   max-width: 860px;
+  /* changes */
+  transition: opacity 1s ease-out;
+  opacity: 0;
 
   @media ($tablet) {
     width: auto;
