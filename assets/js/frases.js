@@ -5,16 +5,16 @@ function quotesfromfile() {
 		.then((res) => res.text())
 		.then((text) => {
 			// create an array from the text file separating on new lines
-			var textArray = text.split('\n');
+			let textArray = text.split('\n');
 			return textArray;
-		})
-	.catch((e) => console.error(e));
+		});
 }
 
 // getting a random quote
 function randomquote() { quotesfromfile().then(textArray => {
 	// the array with the quotes
 	const quotes = textArray;
+	console.log("textArray: ", textArray);
 	// not proud
 	const quoteslength = textArray.length - 1;
 	// declare quote
@@ -40,6 +40,8 @@ function randomquote() { quotesfromfile().then(textArray => {
 
 // after most of the content was loaded
 document.addEventListener("DOMContentLoaded", function(){
-	// quote on load
-	randomquote();
+	// only ask for quotes on the main page
+	if (location.pathname == "/") {
+		randomquote();
+	}
 });
