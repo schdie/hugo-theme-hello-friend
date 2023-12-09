@@ -17,11 +17,24 @@ function randomquote() { quotesfromfile().then(textArray => {
 	const quotes = textArray;
 	// not proud
 	const quoteslength = textArray.length - 1;
-	// get a random quote from the array
-	var quote = quotes[Math.floor(Math.random()*quoteslength)];
-	// insert it into the page
-	document.getElementsByClassName('framed')[0].innerHTML = quote;
-	//return quote;
+	// declare quote
+	let quote;
+
+	function loopQuote() {
+		// get a random quote from the array
+		quote = quotes[Math.floor(Math.random()*quoteslength)];
+		// insert it into the page
+		document.getElementsByClassName('framed')[0].innerHTML = quote;
+		document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 1");
+		// the css animation is 1 sec, ~3900 is probably safer
+		setTimeout(function(){
+			document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
+		},4000);
+   // and schedule a repeat
+   setTimeout(loopQuote, 5000);
+	}
+	// automagically loop through the quotes
+	loopQuote();
 	});
 }
 
@@ -29,11 +42,4 @@ function randomquote() { quotesfromfile().then(textArray => {
 document.addEventListener("DOMContentLoaded", function(){
 	// quote on load
 	randomquote();
-	// show the div for the first time
-	document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 1");
-	// monitor the div for clicks
-	document.getElementsByClassName('framed')[0].addEventListener('click', function() {
-		// change the quote
-		randomquote();
-	});
 });
