@@ -14,22 +14,20 @@ function quotesfromfile() {
 function randomquote() { quotesfromfile().then(textArray => {
 	// the array with the quotes
 	const quotes = textArray;
-	console.log("textArray: ", textArray);
-	// not proud
-	const quoteslength = textArray.length - 1;
+	//console.log("textArray: ", textArray);
 	// declare quote
 	let quote;
 
 	function loopQuote() {
 		// get a random quote from the array
-		quote = quotes[Math.floor(Math.random()*quoteslength)];
+		quote = quotes[Math.floor(Math.random()*(quotes.length - 1))];
 		// insert it into the page
 		document.getElementsByClassName('framed')[0].innerHTML = quote;
 		document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 1");
 		// the css animation is 1 sec, ~3900 is probably safer
 		setTimeout(function(){
 			document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
-		},4000);
+		},3750);
    // and schedule a repeat
    setTimeout(loopQuote, 5000);
 	}
