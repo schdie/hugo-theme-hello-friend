@@ -30,6 +30,8 @@ function showquotes() {
 	const rQuotesArray = randomizequotes();
 	// rQAresolved is the resolved promise
 	rQuotesArray.then(function (rQAresolved){
+		// debug
+		console.log("rQAresolved: ", rQAresolved);
 		// set a counter
 		let qCounter = 0;
 		// logic
@@ -41,14 +43,19 @@ function showquotes() {
 
 			// pause for 4000 ms, quote is shown for 2900ms because the CSS animation is 1000ms, there's 100ms of "buffer"
 			if (qCounter < (rQAresolved.length)) {
-				// inception
+				// a delay inside a delay for the CSS animation
 				setTimeout(function(){
 					document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
 				},2900);
 				// restart logic
 				setTimeout(delayedQuotes, 4000);
 			} else {
+				// set the counter to zero for the cycle should repeat indefinitely
 				qCounter = 0;
+				// a delay inside a delay for the CSS animation
+				setTimeout(function(){
+					document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
+				},2900);
 				// restart logic from the zero
 				setTimeout(delayedQuotes, 4000);
 			}
