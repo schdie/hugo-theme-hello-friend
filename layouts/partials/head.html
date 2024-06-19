@@ -8,7 +8,7 @@
   name="keywords"
   content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}"
 />
-<meta name="robots" content="noodp" />
+<meta name="robots" content="noindex,nofollow,noodp" />
 <link rel="canonical" href="{{ .Permalink }}" />
 
 <!-- head custom -->
@@ -33,11 +33,13 @@
 <link href="{{ (resources.Get "fonts/Inter-Bold.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
 <link href="{{ (resources.Get "fonts/Inter-BoldItalic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
 
-<!-- Twitter Card -->
+<!-- Twitter Card 
 {{ template "_internal/twitter_cards.html" . }}
+-->
 
-<!-- OG data -->
+<!-- OG data 
 {{ template "_internal/opengraph.html" . }}
+-->
 
 <!-- RSS | JSON -->
 {{ range .AlternativeOutputFormats -}}
