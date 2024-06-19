@@ -34,6 +34,7 @@
 	{{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
     {{ range $pages }}
+    {{ if not .Params.Hidden }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
@@ -61,5 +62,6 @@
       </description>
     </item>
     {{ end }}
+     {{ end }}
   </channel>
 </rss>
