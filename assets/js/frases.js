@@ -1,7 +1,7 @@
 // importing the quotes from file
 function quotesfromfile() {
 // importing file with quotes
-	return fetch("quotes_es.txt")
+	return fetch("quotes.txt")
 		.then((res) => res.text())
 		.then((text) => {
 			// create an array from the text file separating on new lines
@@ -51,16 +51,16 @@ function showquotes() {
 					// a delay inside a delay for the CSS animation
 					setTimeout(function(){
 						document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
-					},2900);
+					},6700);
 					// restart logic				
-					setTimeout(delayedQuotes, 4000);
+					setTimeout(delayedQuotes, 8000);
 				} else { // only for the first quote
 					// a delay inside a delay for the CSS animation
 					setTimeout(function(){
 						document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
-					},6700);
+					},13700);
 					// restart logic
-					setTimeout(delayedQuotes, 8000);
+					setTimeout(delayedQuotes, 15000);
 				}
 			} else {
 				// set the counter to zero for the cycle should repeat indefinitely
@@ -68,9 +68,9 @@ function showquotes() {
 				// a delay inside a delay for the CSS animation
 				setTimeout(function(){
 					document.getElementsByClassName('framed')[0].setAttribute("style", "opacity: 0");
-				},2900);
+				},6700);
 				// restart logic from the zero
-				setTimeout(delayedQuotes, 4000);	
+				setTimeout(delayedQuotes, 8000);	
 			}
 		}
 		// first call
