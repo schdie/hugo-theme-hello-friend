@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function(){
 			
 			// change Written by to Photos by
 			posts[i].getElementsByClassName('post-author')[0].innerText = posts[i].getElementsByClassName('post-author')[0].innerText.replace("Written", "Photos");
+			
+			// remove min read
+			posts[i].getElementsByClassName('post-read-time')[0].innerText = posts[i].getElementsByClassName('post-read-time')[0].innerText = "";
 		}
 		
 		// find posts with the castellano tag only
