@@ -38,8 +38,8 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    background: var(--background-secondary);
-    padding: 10px;
+    background: var(--background-secondary-code-title);
+    padding: 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     min-width: 30px;
@@ -58,9 +58,10 @@
   }
 
   &__language {
-    background: var(--background);
+    background: var(--background-code);
     color: var(--color);
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     padding: 3px 10px;
   }
 

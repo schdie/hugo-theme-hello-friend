@@ -2,6 +2,8 @@ body.light-theme, :root {
   /* light theme color */
   --background: #fff;
   --background-secondary: #eaeaea;
+  --background-secondary-code-title: #e0e0e0;
+  --background-code: #c2c2c2;
   --header: #fafafa;
   --color: #222;
   --color-secondary: #999;
@@ -16,6 +18,8 @@ body.dark-theme {
   /* dark theme colors */
   --background: #292a2d;
   --background-secondary: #3b3d42;
+  --background-secondary-code-title: #3b3d42;
+  --background-code: #565656;
   --header: #252627;
   --color: #a9a9b3;
   --color-secondary: #73747b;
