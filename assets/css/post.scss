@@ -24,7 +24,7 @@
 
   &-title {
     font-size: 2.625rem;
-    margin: 0 0 20px;
+    margin: 0 0 5px;
 
     @media ($phone) {
       font-size: 2rem;
@@ -51,7 +51,7 @@
   }
 
   &-cover {
-    margin: 40px -50px;
+    margin: 10px -50px;
     width: 860px;
     max-width: 860px;
 
