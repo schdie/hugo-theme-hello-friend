@@ -15,7 +15,7 @@
 {{- partial "prepended_head.html" . }}
 
 <!-- Theme CSS -->
-{{ $res := resources.Get "css/style.scss" }}
+{{ $res := resources.Get "css/style.scss" | resources.Fingerprint }}
 {{ $style := $res | css.Sass }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
 <!-- Custom CSS to override theme properties (/static/style.css) -->
@@ -26,20 +26,12 @@
 <link rel="shortcut icon" href="{{ "img/favicon.png" | absURL }}" />
 
 <!-- Fonts -->
-<link href="{{ (resources.Get "fonts/Inter-Italic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="{{ (resources.Get "fonts/Inter-Regular.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="{{ (resources.Get "fonts/Inter-Medium.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="{{ (resources.Get "fonts/Inter-MediumItalic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="{{ (resources.Get "fonts/Inter-Bold.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
-<link href="{{ (resources.Get "fonts/Inter-BoldItalic.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
-
-<!-- Twitter Card 
-{{ template "_internal/twitter_cards.html" . }}
--->
-
-<!-- OG data 
-{{ template "_internal/opengraph.html" . }}
--->
+<link href="{{ (resources.Get "fonts/gudea-1.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/gudea-2.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/gudea-3.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/gudea-4.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/gudea-5.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
+<link href="{{ (resources.Get "fonts/gudea-6.woff2").RelPermalink }}" rel="preload" type="font/woff2" as="font" crossorigin="">
 
 <!-- RSS | JSON -->
 {{ range .AlternativeOutputFormats -}}
